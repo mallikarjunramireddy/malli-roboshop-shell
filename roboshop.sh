@@ -2,13 +2,13 @@
 
 AMI=ami-0b4f379183e5706b9 #this keeps on changing
 SG_ID=sg-06b9e0dd4fd1571c5 #replace with your SG ID
-INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+INSTANCES=("mongodb" "redis" "catalogue" "user" "cart" "web")
 ZONE_ID=Z08913253SP498RYPTDOA # replace your zone ID
 DOMAIN_NAME="medirectdevops.online"
 
 for i in "${INSTANCES[@]}"
 do
-    if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
+    if [ $i == "mongodb" ]
     then
         INSTANCE_TYPE="t3.small"
     else
